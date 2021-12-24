@@ -7,13 +7,13 @@ public class LinearQueueUsingJavaQueueInterface {
     private int rear = -1;
     private final Queue<Integer> queue = new LinkedList<>();
 
-    void enqueue(int value) {
+    public void enqueue(int value) {
         queue.add(value);
         rear = value;
         System.out.println(value + " enqueued");
     }
 
-    void dequeue() {
+    public void dequeue() {
         if(isEmpty()) {
             System.out.println("Queue is underflow/empty");
         } else {
@@ -25,7 +25,7 @@ public class LinearQueueUsingJavaQueueInterface {
         }
     }
 
-    void display() {
+    public void display() {
         if(isEmpty()) {
             System.out.println("Queue is underflow/empty");
         } else {
@@ -33,7 +33,7 @@ public class LinearQueueUsingJavaQueueInterface {
         }
     }
 
-    Integer front() {
+    public Integer front() {
         if(!isEmpty()) {
             return queue.peek();
         } else {
@@ -42,7 +42,7 @@ public class LinearQueueUsingJavaQueueInterface {
         }
     }
 
-    int rear() {
+    public int rear() {
         if(!isEmpty()) {
             return rear;
         } else {
@@ -51,11 +51,11 @@ public class LinearQueueUsingJavaQueueInterface {
         }
     }
 
-    int size() {
+    public int size() {
         return queue.size();
     }
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return queue.isEmpty();
     }
 }

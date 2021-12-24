@@ -23,7 +23,7 @@ public class StackUsingJavaStackClass {
         return stack.peek();
     }
 
-    void display() {
+    public void display() {
         if(isEmpty()) {
             System.out.println("Stack is empty");
         } else {
@@ -33,11 +33,11 @@ public class StackUsingJavaStackClass {
         }
     }
 
-    int size() {
+    public int size() {
         return stack.size();
     }
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return stack.isEmpty();
     }
 }
