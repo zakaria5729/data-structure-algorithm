@@ -1,7 +1,7 @@
 package stack;
 
 public class StackUsingLinkedList {
-    int size = 0;
+    private int size = 0;
     Node top = null;
 
     private static class Node {
