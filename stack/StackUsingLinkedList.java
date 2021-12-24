@@ -13,7 +13,7 @@ public class StackUsingLinkedList {
         }
     }
 
-    void push(int value) {
+    public void push(int value) {
         Node temp = new Node(value);
 
         if(temp == null) {
@@ -27,8 +27,8 @@ public class StackUsingLinkedList {
         System.out.println(value + " is pushed to the stack");
     }
 
-    void pop() {
-        if(top == null) {
+    public void pop() {
+        if(isEmpty()) {
             System.out.println("Stack is empty");
         } else {
             top = top.link;
@@ -36,7 +36,7 @@ public class StackUsingLinkedList {
         }
     }
 
-    int peek() {
+    public int peek() {
         if(!isEmpty()) {
             return top.data;
         } else {
@@ -45,16 +45,16 @@ public class StackUsingLinkedList {
         }
     }
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return top == null;
     }
 
-    int size() {
+    public int size() {
         return size;
     }
 
-    void display() {
-        if(top == null) {
+    public void display() {
+        if(isEmpty()) {
             System.out.println("Stack is empty");
         } else {
             Node temp = top;

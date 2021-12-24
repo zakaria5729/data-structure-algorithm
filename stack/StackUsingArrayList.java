@@ -4,12 +4,12 @@ import java.util.ArrayList;
 public class StackUsingArrayList {
     private ArrayList<Integer> stackArrayList = new ArrayList<>();
 
-    void push(int value) {
+    public void push(int value) {
         stackArrayList.add(value);
         System.out.println(value + " is pushed to the stack");
     }
 
-    int peek() {
+    public int peek() {
         if(!isEmpty()) {
             return stackArrayList.get(size() -1);
         } else {
@@ -18,16 +18,16 @@ public class StackUsingArrayList {
         }
     }
 
-    void pop() {
-        if(size() == 0) {
+    public void pop() {
+        if(isEmpty()) {
             System.out.println("Stack is empty");
         } else {
             System.out.println(stackArrayList.remove(size() - 1) + " is popped from the stack");
         }
     }
 
-    void display() {
-        if(size() == 0) {
+    public void display() {
+        if(isEmpty()) {
             System.out.println("Stack is empty");
         } else {
             for (int i = 0; i < size(); i++) {
@@ -36,11 +36,11 @@ public class StackUsingArrayList {
         }
     }
 
-    int size() {
+    public int size() {
         return stackArrayList.size();
     }
 
-    boolean isEmpty() {
-        return stackArrayList.size() == 0;
+    public boolean isEmpty() {
+        return size() == 0;
     }
 }

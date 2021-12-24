@@ -13,7 +13,7 @@ public class LinearQueueUsingLinkedList {
         }
     }
 
-    void enqueue(int value) {
+    public void enqueue(int value) {
         Node temp = new Node(value);
 
         if(temp == null) {
@@ -32,7 +32,7 @@ public class LinearQueueUsingLinkedList {
         System.out.println(value + " enqueued");
     }
 
-    void dequeue() {
+    public void dequeue() {
         if(isEmpty()) {
             System.out.println("Queue is underflow/empty");
         } else {
@@ -42,7 +42,7 @@ public class LinearQueueUsingLinkedList {
         }
     }
 
-    void display() {
+    public void display() {
         if(isEmpty()) {
             System.out.println("Queue is underflow/empty");
         } else {
@@ -55,7 +55,7 @@ public class LinearQueueUsingLinkedList {
         }
     }
 
-    int front() {
+    public int front() {
         if(!isEmpty()) {
             return front.data;
         } else {
@@ -64,7 +64,7 @@ public class LinearQueueUsingLinkedList {
         }
     }
 
-    int rear() {
+    public int rear() {
         if(!isEmpty()) {
             return rear.data;
         } else {
@@ -73,11 +73,11 @@ public class LinearQueueUsingLinkedList {
         }
     }
 
-    int size() {
+    public int size() {
         return size;
     }
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return front == null;
     }
 }

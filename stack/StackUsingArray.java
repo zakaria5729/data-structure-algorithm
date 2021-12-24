@@ -5,7 +5,7 @@ public class StackUsingArray {
     private int top = -1;
     private int[] stackArray = new int[inputSize];
 
-    void push(int value) {
+    public void push(int value) {
         if(top == inputSize - 1) {
             System.out.println("Stack is full");
         } else {
@@ -14,7 +14,7 @@ public class StackUsingArray {
         }
     }
 
-    int peek() {
+    public int peek() {
         if(!isEmpty()) {
             return stackArray[top];
         } else {
@@ -23,8 +23,8 @@ public class StackUsingArray {
         }
     }
 
-    void pop() {
-        if(top == -1) {
+    public void pop() {
+        if(isEmpty()) {
             System.out.println("Stack is empty");
         } else {
             System.out.println(stackArray[top] + " is popped from the stack");
@@ -32,8 +32,8 @@ public class StackUsingArray {
         }
     }
 
-    void display() {
-        if(top == -1) {
+    public void display() {
+        if(isEmpty()) {
             System.out.println("Stack is empty");
         } else {
             for (int i = 0; i <= top; i++) {
@@ -42,11 +42,11 @@ public class StackUsingArray {
         }
     }
 
-    int size() {
+    public int size() {
         return top + 1;
     }
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return top == -1;
     }
 }

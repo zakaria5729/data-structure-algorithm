@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class LinearQueueUsingArrayList {
     private ArrayList<Integer> queueArrayList = new ArrayList<>();
 
-    void enqueue(int value) {
+    public void enqueue(int value) {
         queueArrayList.add(value);
         System.out.println(value + " enqueued");
     }
 
-    void dequeue() {
+    public void dequeue() {
         if(isEmpty()) {
             System.out.println("Queue is underflow/empty");
         } else {
@@ -18,7 +18,7 @@ public class LinearQueueUsingArrayList {
         }
     }
 
-    void display() {
+    public void display() {
         if(isEmpty()) {
             System.out.println("Queue is underflow/empty");
         } else {
@@ -28,7 +28,7 @@ public class LinearQueueUsingArrayList {
         }
     }
 
-    int front() {
+    public int front() {
         if(!isEmpty()) {
             return queueArrayList.get(0);
         } else {
@@ -37,7 +37,7 @@ public class LinearQueueUsingArrayList {
         }
     }
 
-    int rear() {
+    public int rear() {
         if(!isEmpty()) {
             return queueArrayList.get(size() - 1);
         } else {
@@ -46,11 +46,11 @@ public class LinearQueueUsingArrayList {
         }
     }
 
-    int size() {
+    public int size() {
         return queueArrayList.size();
     }
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return queueArrayList.isEmpty();
     }
 }
