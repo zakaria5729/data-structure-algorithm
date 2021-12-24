@@ -1,4 +1,4 @@
-package queue;
+package queue.linear;
 
 public class LinearQueueUsingArray {
     private int inputSize = 5;

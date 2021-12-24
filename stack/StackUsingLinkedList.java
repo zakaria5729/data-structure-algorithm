@@ -7,20 +7,22 @@ public class StackUsingLinkedList {
     private static class Node {
         int data;
         Node link;
+
+        Node(int data) {
+            this.data = data;
+        }
     }
 
     void push(int value) {
-        Node temp = new Node();
+        Node temp = new Node(value);
 
         if(temp == null) {
             System.out.print("\nHeap Overflow");
             return;
         }
 
-        temp.data = value;
         temp.link = top;
         top = temp;
-
         size++;
         System.out.println(value + " is pushed to the stack");
     }
