@@ -1,12 +1,12 @@
 package queue.linear;
 
 public class LinearQueueUsingArray {
-    private int inputSize = 5;
-    private int[] queueArray = new int[5];
+    private int[] queueArray = {0, 0, 0, 0, 0};
+    private int inputSize = queueArray.length;
     private int rear = -1, front = -1;
 
-    public void enqueue(int value) {
-        if(rear == inputSize - 1) {
+    void enqueue(int value) {
+        if(isFull()) {
             System.out.println("Queue is overflow/full");
         } else {
             if(front == -1) ++front;
@@ -15,16 +15,21 @@ public class LinearQueueUsingArray {
         }
     }
 
-    public void dequeue() {
+    void dequeue() {
         if(isEmpty()) {
             System.out.println("Queue is underflow/empty");
         } else {
-            System.out.println(queueArray[front] + " dequeued");
-            front++;
+            if (front == rear) {
+                System.out.println(queueArray[front] + " dequeued");
+                front = rear = -1;
+            } else {
+                System.out.println(queueArray[front] + " dequeued");
+                front++;
+            }
         }
     }
 
-    public void display() {
+    void display() {
         if(isEmpty()) {
             System.out.println("Queue is underflow/empty");
         } else {
@@ -34,7 +39,7 @@ public class LinearQueueUsingArray {
         }
     }
 
-    public int front() {
+    int front() {
         if(!isEmpty()) {
             return queueArray[front];
         } else {
@@ -43,7 +48,7 @@ public class LinearQueueUsingArray {
         }
     }
 
-    public int rear() {
+    int rear() {
         if(!isEmpty()) {
             return queueArray[rear];
         } else {
@@ -52,11 +57,15 @@ public class LinearQueueUsingArray {
         }
     }
 
-    public int size() {
+    int size() {
         return isEmpty() ? 0 : (rear - front) + 1;
     }
 
-    public boolean isEmpty() {
-        return front == -1 || front > rear;
+    boolean isEmpty() {
+        return front == -1 && rear == -1;
+    }
+
+    boolean isFull() {
+        return rear == inputSize - 1;
     }
 }

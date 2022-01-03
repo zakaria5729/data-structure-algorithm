@@ -1,52 +1,56 @@
 package stack;
 
 public class StackUsingArray {
-    private int inputSize = 5;
     private int top = -1;
-    private int[] stackArray = new int[inputSize];
+    private int[] array = {0, 0, 0, 0, 0};
+    private int size = array.length;
 
-    public void push(int value) {
-        if(top == inputSize - 1) {
+    void push(int value) {
+        if(isFull()) {
             System.out.println("Stack is full");
         } else {
-            stackArray[++top] = value;
+            array[++top] = value;
             System.out.println(value + " is pushed to the stack");
         }
     }
 
-    public int peek() {
+    int peek() {
         if(!isEmpty()) {
-            return stackArray[top];
+            return array[top];
         } else {
             System.out.println("Stack is empty");
             return - 1;
         }
     }
 
-    public void pop() {
-        if(isEmpty()) {
+    void pop() {
+        if(top == -1) {
             System.out.println("Stack is empty");
         } else {
-            System.out.println(stackArray[top] + " is popped from the stack");
+            System.out.println(array[top] + " is popped from the stack");
             top--;
         }
     }
 
-    public void display() {
-        if(isEmpty()) {
+    void display() {
+        if(top == -1) {
             System.out.println("Stack is empty");
         } else {
             for (int i = 0; i <= top; i++) {
-                System.out.println(stackArray[i]);
+                System.out.println(array[i]);
             }
         }
     }
 
-    public int size() {
+    int size() {
         return top + 1;
     }
 
-    public boolean isEmpty() {
+    boolean isEmpty() {
         return top == -1;
+    }
+    
+    boolean isFull() {
+        return top == size - 1;
     }
 }
