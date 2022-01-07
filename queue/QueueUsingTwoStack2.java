@@ -4,12 +4,12 @@ import java.util.Stack;
 
 /*
  * ---- Steps ----
- * push(x)
+ * enqueue(x)
  * 1. S1 -> S2 (element by element)
- * 2. push x -> S1
+ * 2. enqueue x -> S1
  * 3. S2 -> S1 (element by element)
  *
- * pop()
+ * dequeue()
  * 1. S1.remove()
  */
 
@@ -33,7 +33,7 @@ public class QueueUsingTwoStack {
 
     public void dequeue() {
         if(isEmpty()) {
-            System.out.println("Stack is empty");
+            System.out.println("Queue is empty");
             return;
         }
 
@@ -44,14 +44,14 @@ public class QueueUsingTwoStack {
         if(!isEmpty()) {
             return primaryStack.peek();
         } else {
-            System.out.println("Stack is empty");
+            System.out.println("Queue is empty");
             return - 1;
         }
     }
 
     public void display() {
         if(isEmpty()) {
-            System.out.println("Stack is empty");
+            System.out.println("Queue is empty");
             return;
         }
 
@@ -66,5 +66,5 @@ public class QueueUsingTwoStack {
 
     public boolean isEmpty() {
         return primaryStack.isEmpty();
-    } 
+    }
 }
