@@ -2,11 +2,11 @@ package stack;
 
 public class StackUsingLinkedList {
     private int size = 0;
-    Node top = null;
+    private Node top = null;
 
     private static class Node {
-        int data;
-        Node link;
+        private int data;
+        private Node link;
 
         Node(int data) {
             this.data = data;

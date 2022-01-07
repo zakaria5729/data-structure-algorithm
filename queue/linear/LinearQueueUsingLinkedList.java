@@ -1,12 +1,12 @@
 package queue.linear;
 
 public class LinearQueueUsingLinkedList {
-    int size = 0;
+    private int size = 0;
     private Node rear = null, front = null;
 
     private static class Node {
-        int data;
-        Node link;
+        private int data;
+        private Node link;
 
         Node(int data) {
             this.data = data;
@@ -24,6 +24,10 @@ public class LinearQueueUsingLinkedList {
         if(front == null) {
             front = rear = temp;
         } else {
+            if(front.link == null) {
+                front.link = temp;
+            }
+
             rear.link = temp;
             rear = temp;
         }
