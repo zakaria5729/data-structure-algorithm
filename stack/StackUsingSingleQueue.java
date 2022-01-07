@@ -50,9 +50,7 @@ public class StackUsingSingleQueue {
 
     public boolean isEmpty () {
         return queue.isEmpty();
-    } //
-
-    /* fldfjd */
+    }
 
     public void display() {
         if(isEmpty()) {
